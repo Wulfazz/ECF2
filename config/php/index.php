@@ -15,15 +15,11 @@ session_start();
     <?php
     include 'navbar.php';
     ?>
-
-        <!-- Contenus site (les différentes pages) -->
-
-        <?php
-        if (isset($_GET['exo'])){
-            $exo = $_GET['exo'];
-            include "exo/$exo.php";
-        }
-        ?>
+    
+    <!-- Contenus site (les différentes pages) -->
+    <?php
+    include 'exo/5vs5.php';
+    ?>
 
     <!-- footer -->
     <?php
