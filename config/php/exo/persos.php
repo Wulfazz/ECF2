@@ -1,15 +1,15 @@
 <?php
 
-//Base pour Joueur
+//Base pour Personnage
 
-class Joueur {
+class Personnage {
     //Pv de base
     public $pv = 100;
-    //Nom du joueur
-    public $nameJoueur;
+    //Nom du Personnage
+    public $nom;
 
-    public function __construct(string $nameJoueur) {
-        $this->nameJoueur = $nameJoueur;
+    public function __construct(string $nom) {
+        $this->nom = $nom;
     }
 
     public function getpv() {
@@ -24,78 +24,78 @@ class Joueur {
     }
 
     //Compétence attaqueBasique
-    public function attaqueBasique(Joueur $cible) {
+    public function attaqueBasique(Personnage $cible) {
 
     }
 
     //Compétence attaque spéciale
-    public function competenceSpeciale(Joueur $cible) {
+    public function competenceSpeciale(Personnage $cible) {
 
     }
 }
 
-// Les classes en rapport avec les joueurs 
+// Les classes en rapport avec les Personnages 
 
-class Combattant extends Joueur{
+class Combattant extends Personnage{
 
-    public function attaqueBasique(Joueur $cible) {
+    public function attaqueBasique(Personnage $cible) {
         $dmg = 10;
         $cible->setpv($dmg);
-        echo "{$this->nameJoueur} inflige $dmg dégâts à {$cible->nameJoueur} avec une attaque basique.\n";
+        echo "{$this->nom} inflige $dmg dégâts à {$cible->nom} avec une attaque basique.\n";
     }
 
-    public function competenceSpeciale(Joueur $cible) {
+    public function competenceSpeciale(Personnage $cible) {
         $dmg = 20;
         $cible->setpv($dmg);
-        echo "{$this->nameJoueur} utilise sa compétence spéciale pour infliger $dmg dégâts à {$cible->nameJoueur}.\n";
+        echo "{$this->nom} utilise sa compétence spéciale pour infliger $dmg dégâts à {$cible->nom}.\n";
     }
 
 }
 
-class Tirreur extends Joueur{
+class Tirreur extends Personnage{
 
-    public function attaqueBasique(Joueur $cible) {
+    public function attaqueBasique(Personnage $cible) {
         $dmg = 8;
         $cible->setpv($dmg);
-        echo "{$this->nameJoueur} tire sur {$cible->nameJoueur} pour $dmg dégâts.\n";
+        echo "{$this->nom} tire sur {$cible->nom} pour $dmg dégâts.\n";
     }
 
-    public function competenceSpeciale(Joueur $cible) {
+    public function competenceSpeciale(Personnage $cible) {
         $dmg = 18;
         $cible->setpv($dmg);
-        echo "{$this->nameJoueur} exécute un tir de précision sur {$cible->nameJoueur} pour $dmg dégâts.\n";
+        echo "{$this->nom} exécute un tir de précision sur {$cible->nom} pour $dmg dégâts.\n";
     }
 
 }
 
-class Support extends Joueur{
+class Support extends Personnage{
 
-    public function attaqueBasique(Joueur $cible) {
+    public function attaqueBasique(Personnage $cible) {
         $soin = 10;
         $this->pv += $soin;
-        echo "{$this->nameJoueur} se soigne de $soin PV.\n";
+        echo "{$this->nom} se soigne de $soin PV.\n";
     }
 
-    public function competenceSpeciale(Joueur $cible) {
+    public function competenceSpeciale(Personnage $cible) {
         $soin = 25;
         $this->pv += $soin;
-        echo "{$this->nameJoueur} utilise une compétence spéciale pour se soigner de $soin PV.\n";
+        echo "{$this->nom} utilise une compétence spéciale pour se soigner de $soin PV.\n";
     }
 
 }
 
-class Mage extends Joueur{
+class Mage extends Personnage{
 
-    public function attaqueBasique(Joueur $cible) {
+    public function attaqueBasique(Personnage $cible) {
         $dmg = 12;
         $cible->setpv($dmg);
-        echo "{$this->nameJoueur} lance un sort mineur sur {$cible->nameJoueur} pour $dmg dégâts.\n";
+        echo "{$this->nom} lance un sort mineur sur {$cible->nom} pour $dmg dégâts.\n";
     }
 
-    public function competenceSpeciale(Joueur $cible) {
+    public function competenceSpeciale(Personnage $cible) {
         $dmg = 25; 
         $cible->setpv($dmg);
-        echo "{$this->nameJoueur} déchaîne sa puissance magique sur {$cible->nameJoueur} pour $dmg dégâts.\n";
+        echo "{$this->nom} déchaîne sa puissance magique sur {$cible->nom} pour $dmg dégâts.\n";
     }
 
 }

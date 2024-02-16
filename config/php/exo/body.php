@@ -9,10 +9,8 @@ if (isset($_POST['action']) && isset($_POST['joueur']) && isset($_POST['cible'])
     switch ($action) {
         case 'attack':
             $joueur->attaqueBasique($cible);
-            break;
         case 'special':
             $joueur->competenceSpeciale($cible);
-            break;
     }
 
     // Renvoyer une réponse
