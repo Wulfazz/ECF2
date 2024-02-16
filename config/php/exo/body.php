@@ -2,7 +2,7 @@
 
 if (isset($_POST['action']) && isset($_POST['joueur']) && isset($_POST['cible'])) {
     $action = $_POST['action'];
-    $joueur = $_SESSION['personnages'][$_POST['joueur']]; // Supposons que les objets Joueur sont stockés dans $_SESSION
+    $joueur = $_SESSION['personnages'][$_POST['joueur']];
     $cible = $_SESSION['personnages'][$_POST['cible']];
 
     // Traiter l'action
