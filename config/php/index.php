@@ -15,10 +15,13 @@ session_start();
     <?php
     include 'navbar.php';
     ?>
-    
-    <!-- Contenus site (les différentes pages) -->
+
     <?php
-    include 'exo/5vs5.php';
+    include 'exo/body.php';
+    ?>
+
+    <?php
+    include 'exo/persos.php';
     ?>
 
     <!-- footer -->
