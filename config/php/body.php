@@ -98,6 +98,7 @@ $classes = array('Tireur', 'Mage', 'Support', 'Combattant');
 ?>
 
 <div class="centerDiv">
+
 <h1>Combat au tour par tour</h1>
 
 <!-- Formulaire combat -->
