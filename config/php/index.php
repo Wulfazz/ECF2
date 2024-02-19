@@ -13,6 +13,7 @@ if (isset($_GET['reset'])) {
     ob_end_flush(); // Envoyez le contenu du tampon au navigateur
 }
 
+session_start();
 ?>
 
     <!-- connexion à la bdd -->
@@ -22,10 +23,6 @@ if (isset($_GET['reset'])) {
 
     <?php
     include  'header.php';
-    ?>
-
-    <?php
-    include  'navbar.php';
     ?>
 
     <?php
