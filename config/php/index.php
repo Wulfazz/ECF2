@@ -1,21 +1,16 @@
 <?php
-require_once 'classes/personnage.php';
-require_once 'classes/combattant.php';
-require_once 'classes/mage.php';
-require_once 'classes/support.php';
-require_once 'classes/tireur.php';
-
-if (isset($_GET['reset'])) {
-    ob_start(); // Démarrez la sortie tamponnée
-    echo "Ceci est une sortie avant header()";
-    header("Location: index.php"); // Maintenant, cela fonctionne correctement
-    exit();
-    ob_end_flush(); // Envoyez le contenu du tampon au navigateur
-}
-
 session_start();
-?>
 
+require_once 'tools/selection.php';
+require_once 'classes/Character.php';
+require_once 'classes/Mage.php';
+require_once 'classes/Fighter.php';
+require_once 'classes/Support.php';
+require_once 'classes/Shooter.php';
+require_once 'classes/Game.php';
+
+?>
+    
     <!-- connexion à la bdd -->
     <?php
     require_once 'db.php';
@@ -23,10 +18,6 @@ session_start();
 
     <?php
     include  'header.php';
-    ?>
-
-    <?php
-    include  'body.php';
     ?>
 
     <!-- footer -->
